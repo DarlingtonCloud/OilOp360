@@ -1,13 +1,107 @@
 # OilOps360 v1
 
-OilOps360 is a static HTML, CSS, and JavaScript prototype for oil and gas operations compliance. This version focuses on two modules:
+## Digital Operations Compliance Platform for Oil & Gas Industry
 
-- Contractor Compliance
-- Asset Inspection
+## Problem Statement
 
-Together, these modules demonstrate CRUD operations, document/file tracking, dashboard metrics, search and filtering, user roles, and simple CSV reporting without requiring a backend.
+Oil and gas operations rely heavily on compliance documentation, asset inspections, and operational records to maintain safety, reliability, and regulatory standards.
 
-## Project Structure
+However, many organizations still manage critical processes using:
+
+- Paper-based documentation
+- Excel spreadsheets
+- Email communication
+- Manual inspection records
+- Scattered compliance files
+
+These traditional approaches create challenges such as:
+
+- Difficulty tracking contractor compliance documents
+- Expired certifications and approvals
+- Poor visibility into asset inspection status
+- Delayed reporting and decision-making
+- Increased operational and safety risks
+
+OilOps360 was created to solve these challenges by providing a centralized digital platform that improves compliance tracking, asset inspection management, and operational visibility.
+
+---
+
+# Solution Overview
+
+OilOps360 is a frontend-based digital operations management prototype designed for oil and gas companies to manage contractor compliance and asset inspection activities.
+
+The system provides a simple workflow for:
+
+- Managing contractor records
+- Tracking compliance documentation
+- Monitoring asset inspection activities
+- Generating operational reports
+- Providing dashboard visibility for decision-makers
+
+This MVP demonstrates how manual operational processes can be transformed into a digital workflow before integrating a full backend system.
+
+---
+
+## Business Value
+
+OilOps360 helps oil and gas organizations:
+
+- Improve compliance visibility
+- Reduce manual documentation processes
+- Improve inspection tracking
+- Support operational decision-making
+- Reduce safety and compliance risks
+
+# MVP Scope
+
+This version focuses on two core operational modules:
+
+## 1. Contractor Compliance Management
+
+The contractor compliance module helps organizations manage third-party vendor and contractor documentation.
+
+Users can:
+
+- Register contractors
+- Track compliance status
+- Monitor required documents
+- Search contractor records
+- Filter compliance conditions
+- Export compliance reports
+
+Example documents tracked:
+
+- HSE Certificates
+- Insurance Documents
+- Tax Clearance
+- Company Registration
+- Safety Certifications
+
+---
+
+## 2. Asset Inspection Management
+
+The asset inspection module helps operations teams maintain visibility into equipment and asset conditions.
+
+Users can:
+
+- Register operational assets
+- Record inspection details
+- Track inspection history
+- Monitor asset conditions
+- Search and filter assets
+- Export inspection reports
+
+Example assets:
+
+- Pumps
+- Generators
+- Storage Tanks
+- Processing Equipment
+
+---
+
+# Project Structure
 
 ```text
 oilops360/
@@ -24,159 +118,3 @@ oilops360/
 │   └── assets.js
 └── images/
     └── oilfield.svg
-```
-
-## Pages
-
-### `index.html`
-
-Login screen for the prototype. The form stores a simple demo user object in `localStorage` and redirects to `dashboard.html`.
-
-Demo values are already filled in:
-
-- Email: `admin@oilops360.com`
-- Password: `oilops360`
-- Role: `Compliance Manager`, `Inspector`, or `Viewer`
-
-The password is not validated because this is a frontend-only prototype.
-
-### `dashboard.html`
-
-Main dashboard showing operational KPIs:
-
-- Total contractors
-- Total assets
-- Pending contractor documents
-- Recent inspections
-- Contractor compliance status
-- Asset inspection queue
-- Compliance summary meters
-
-It also includes a CSV export for the dashboard summary.
-
-### `contractors.html`
-
-Contractor Compliance module. Users can:
-
-- Add contractors
-- Edit contractors
-- Delete contractors
-- Track document names from uploaded files
-- Search by company, contact, or scope
-- Filter by compliance status
-- Export contractor records to CSV
-
-Contractor records are saved in browser `localStorage` under:
-
-```text
-oilops360Contractors
-```
-
-### `assets.html`
-
-Asset Inspection module. Users can:
-
-- Add assets
-- Edit assets
-- Delete assets
-- Track inspection file names
-- Search by asset name, location, inspector, or type
-- Filter by condition
-- Export asset inspection records to CSV
-
-Asset records are saved in browser `localStorage` under:
-
-```text
-oilops360Assets
-```
-
-## How Data Works
-
-This project does not use a database. Data is stored in the browser using `localStorage`.
-
-On first load, the JavaScript files seed demo data for contractors and assets. After that, any create, edit, or delete action updates the stored browser data.
-
-To reset the demo data, clear the browser storage for the site, or run this in the browser console:
-
-```js
-localStorage.removeItem("oilops360Contractors");
-localStorage.removeItem("oilops360Assets");
-localStorage.removeItem("oilops360User");
-```
-
-Then reload `index.html`.
-
-## User Roles
-
-The login page lets you choose a demo role:
-
-- `Compliance Manager`
-- `Inspector`
-- `Viewer`
-
-In this prototype, `Viewer` mode disables editing controls on the contractor and asset pages. Manager and inspector roles can create, edit, and delete records.
-
-## File and Document Management
-
-The file inputs are prototype-only. They capture and display selected file names, but they do not upload or store the actual files.
-
-This keeps the app backend-free while still demonstrating how document management would appear in the workflow.
-
-## Reporting
-
-Each reporting action generates a CSV file in the browser:
-
-- Dashboard summary export
-- Contractor report export
-- Asset inspection report export
-
-The CSV files are created from the current `localStorage` records.
-
-## How To Run
-
-Because this is a static project, you can open it directly in a browser:
-
-```text
-index.html
-```
-
-For the most reliable behavior, especially with browser security rules, serve the folder with a local static server:
-
-```bash
-python -m http.server 4173
-```
-
-Then open:
-
-```text
-http://127.0.0.1:4173/index.html
-```
-
-Run the command from inside the `oilops360` folder.
-
-## Suggested Backend Upgrade Path
-
-When moving beyond the frontend prototype, the next backend features would be:
-
-- Real authentication and authorization
-- Contractor and asset database tables
-- File upload and storage
-- Audit history for compliance changes
-- Inspection scheduling and reminders
-- Role-based API permissions
-- Server-generated reports
-
-## Current Limitations
-
-- No real authentication
-- No backend database
-- Uploaded files are not persisted, only file names are tracked
-- CSV exports are generated client-side
-- Data is stored per browser/device
-
-## Tech Stack
-
-- HTML
-- CSS
-- Vanilla JavaScript
-- Browser `localStorage`
