@@ -21,7 +21,6 @@
         <button type="button" data-logout>Logout</button>
       </nav>
     </aside>
-
     <main class="main-content">
       <header class="topbar">
         <div>
@@ -30,7 +29,6 @@
         </div>
         <button class="primary-action" id="newAssetBtn">New asset</button>
       </header>
-
       <section class="toolbar">
         <label class="search-field">
           Search
@@ -47,7 +45,6 @@
         </label>
         <button class="secondary-action" id="exportAssets">Export report</button>
       </section>
-
       <section class="split-view">
         <form class="panel record-form" id="assetForm">
           <div class="panel-header">
@@ -72,7 +69,6 @@
             <button type="button" class="secondary-action" id="resetAssetForm">Clear</button>
           </div>
         </form>
-
         <section class="panel table-panel">
           <div class="table-wrap">
             <table>
@@ -91,9 +87,30 @@
           </div>
         </section>
       </section>
+      <details class="panel trash-panel" id="assetTrashPanel">
+        <summary>
+          <h2 style="font-size:1.05rem;">Recently deleted</h2>
+          <span class="trash-count" id="assetTrashCount">0</span>
+        </summary>
+        <div class="table-wrap" style="margin-top:1rem;">
+          <table>
+            <thead>
+              <tr>
+                <th>Asset</th>
+                <th>Location</th>
+                <th>Condition</th>
+                <th>Deleted</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="assetTrashTable"></tbody>
+          </table>
+        </div>
+        <p class="retention-note">Deleted assets are kept for 30 days and can be restored, then removed permanently.</p>
+      </details>
     </main>
   </div>
-
+  <script src="js/shared.js"></script>
   <script src="js/assets.js"></script>
 </body>
 </html>

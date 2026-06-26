@@ -17,11 +17,10 @@
         <a href="dashboard.html" class="active">Dashboard</a>
         <a href="contractors.html">Contractors</a>
         <a href="assets.html">Assets</a>
-        <a href="#reports">Reports</a>
+        <a href="dashboard.html#reports">Reports</a>
         <button type="button" data-logout>Logout</button>
       </nav>
     </aside>
-
     <main class="main-content">
       <header class="topbar">
         <div>
@@ -30,7 +29,6 @@
         </div>
         <div class="user-pill" id="userPill">Compliance Manager</div>
       </header>
-
       <section class="kpi-grid" aria-label="Dashboard metrics">
         <article class="kpi-card">
           <span>Total Contractors</span>
@@ -53,7 +51,6 @@
           <small>last 30 days</small>
         </article>
       </section>
-
       <section class="dashboard-grid">
         <article class="panel">
           <div class="panel-header">
@@ -65,7 +62,6 @@
           </div>
           <div class="status-list" id="contractorStatusList"></div>
         </article>
-
         <article class="panel">
           <div class="panel-header">
             <div>
@@ -77,7 +73,6 @@
           <div class="status-list" id="assetStatusList"></div>
         </article>
       </section>
-
       <section class="panel" id="reports">
         <div class="panel-header">
           <div>
@@ -99,7 +94,7 @@
       </section>
     </main>
   </div>
-
+  <script src="js/shared.js"></script>
   <script src="js/dashboard.js"></script>
 </body>
 </html>

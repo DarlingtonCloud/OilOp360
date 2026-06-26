@@ -42,6 +42,14 @@ button {
   cursor: pointer;
 }
 
+button:disabled,
+input:disabled,
+select:disabled,
+textarea:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
 .login-page {
   display: grid;
   place-items: center;
@@ -471,6 +479,64 @@ td {
   background: #e7eef4;
   font-size: 0.78rem;
   font-weight: 800;
+}
+
+.empty-state {
+  color: var(--muted);
+  font-size: 0.88rem;
+  padding: 10px 0;
+}
+
+/* ---------- Recovery / trash panel ---------- */
+.trash-panel summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.trash-panel summary::-webkit-details-marker {
+  display: none;
+}
+
+.trash-panel summary::before {
+  content: "▸";
+  color: var(--muted);
+  font-size: 0.75rem;
+  transition: transform 0.15s ease;
+}
+
+.trash-panel[open] summary::before {
+  transform: rotate(90deg);
+}
+
+.trash-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 26px;
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 0.76rem;
+  font-weight: 800;
+  color: var(--steel);
+  background: #e7eef4;
+}
+
+.trash-row td {
+  color: var(--muted);
+}
+
+.trash-row .row-title {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.retention-note {
+  color: var(--muted);
+  font-size: 0.8rem;
+  margin: 14px 0 0;
 }
 
 @media (max-width: 980px) {

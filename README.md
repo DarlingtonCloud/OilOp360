@@ -2,11 +2,17 @@
 
 ## Digital Operations Compliance Platform for Oil & Gas Industry
 
-## Problem Statement
+OilOps360 is a digital operations compliance platform designed to help oil and gas organizations manage contractor compliance, asset inspections, operational records, and document recovery processes.
 
-Oil and gas operations rely heavily on compliance documentation, asset inspections, and operational records to maintain safety, reliability, and regulatory standards.
+The MVP transforms manual compliance workflows such as paper documentation, spreadsheets, and scattered files into a centralized digital workspace.
 
-However, many organizations still manage critical processes using:
+---
+
+# Problem Statement
+
+Oil and gas operations depend on accurate compliance records, equipment inspections, and operational documentation to maintain safety, reliability, and regulatory standards.
+
+However, many organizations still rely on:
 
 - Paper-based documentation
 - Excel spreadsheets
@@ -14,62 +20,47 @@ However, many organizations still manage critical processes using:
 - Manual inspection records
 - Scattered compliance files
 
-These traditional approaches create challenges such as:
+This creates challenges including:
 
 - Difficulty tracking contractor compliance documents
 - Expired certifications and approvals
-- Poor visibility into asset inspection status
-- Delayed reporting and decision-making
-- Increased operational and safety risks
-
-OilOps360 was created to solve these challenges by providing a centralized digital platform that improves compliance tracking, asset inspection management, and operational visibility.
+- Poor visibility into asset conditions
+- Delayed operational reporting
+- Increased compliance and safety risks
+- Accidental deletion or loss of critical records
 
 ---
 
 # Solution Overview
 
-OilOps360 is a frontend-based digital operations management prototype designed for oil and gas companies to manage contractor compliance and asset inspection activities.
+OilOps360 provides a centralized digital workflow for managing:
 
-The system provides a simple workflow for:
+- Contractor compliance records
+- Asset inspection activities
+- Operational reports
+- Deleted record recovery
+- Compliance visibility dashboards
 
-- Managing contractor records
-- Tracking compliance documentation
-- Monitoring asset inspection activities
-- Generating operational reports
-- Providing dashboard visibility for decision-makers
-
-This MVP demonstrates how manual operational processes can be transformed into a digital workflow before integrating a full backend system.
+This MVP demonstrates how traditional operational processes can be digitized before integrating a full backend infrastructure.
 
 ---
 
-## Business Value
-
-OilOps360 helps oil and gas organizations:
-
-- Improve compliance visibility
-- Reduce manual documentation processes
-- Improve inspection tracking
-- Support operational decision-making
-- Reduce safety and compliance risks
-
-# MVP Scope
-
-This version focuses on two core operational modules:
+# Core Features
 
 ## 1. Contractor Compliance Management
 
-The contractor compliance module helps organizations manage third-party vendor and contractor documentation.
+The contractor module allows organizations to manage third-party compliance information.
 
-Users can:
+Capabilities:
 
 - Register contractors
 - Track compliance status
-- Monitor required documents
+- Manage required documents
 - Search contractor records
 - Filter compliance conditions
 - Export compliance reports
 
-Example documents tracked:
+Tracked documents include:
 
 - HSE Certificates
 - Insurance Documents
@@ -79,42 +70,67 @@ Example documents tracked:
 
 ---
 
-## 2. Asset Inspection Management
+# 2. Asset Inspection Management
 
-The asset inspection module helps operations teams maintain visibility into equipment and asset conditions.
+The asset management module helps operations teams monitor equipment health and inspection schedules.
 
-Users can:
+Capabilities:
 
 - Register operational assets
-- Record inspection details
+- Record inspection information
 - Track inspection history
-- Monitor asset conditions
+- Monitor asset condition
 - Search and filter assets
 - Export inspection reports
 
-Example assets:
+Supported assets:
 
 - Pumps
 - Generators
 - Storage Tanks
+- Wellheads
+- Valves
 - Processing Equipment
 
 ---
 
-# Project Structure
+# 3. Document Recovery & Data Protection
 
-```text
-oilops360/
-├── index.html
-├── dashboard.html
-├── contractors.html
-├── assets.html
-├── README.md
-├── css/
-│   └── style.css
-├── js/
-│   ├── dashboard.js
-│   ├── contractors.js
-│   └── assets.js
-└── images/
-    └── oilfield.svg
+OilOps360 prevents permanent loss of important operational records through a recovery workflow.
+
+## Scenario
+
+A compliance manager accidentally deletes:
+
+- HSE certificates
+- Inspection reports
+- Asset records
+
+Instead of permanently removing the information:
+Delete Record
+
+  ↓
+
+Move To Recovery Storage
+
+  ↓
+
+Maintain Audit History
+
+  ↓
+
+Restore When Needed
+
+
+---
+
+## Soft Delete System
+
+Deleted records are stored separately instead of being removed permanently.
+
+
+The recovery page allows authorized users to:
+
+View deleted documents
+Restore records
+delete permanently
